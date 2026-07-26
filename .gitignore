@@ -1,0 +1,9 @@
+# Material fuente sin procesar (no necesario para el sitio publicado)
+fotos/
+
+# Archivos de configuración local / sistema
+.DS_Store
+Thumbs.db
+
+# Documentos de referencia (no son parte del sitio)
+*.pdf
