@@ -4,6 +4,7 @@ fotos/
 # Archivos de configuración local / sistema
 .DS_Store
 Thumbs.db
+.claude/
 
 # Documentos de referencia (no son parte del sitio)
 *.pdf

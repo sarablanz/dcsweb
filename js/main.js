@@ -19,6 +19,22 @@
     });
   }
 
+  function initThemeToggle() {
+    const btn = document.querySelector(".theme-toggle");
+    if (!btn) return;
+
+    btn.addEventListener("click", () => {
+      const isLight = document.documentElement.getAttribute("data-theme") === "light";
+      if (isLight) {
+        document.documentElement.removeAttribute("data-theme");
+        try { localStorage.setItem("dcs-theme", "dark"); } catch (e) {}
+      } else {
+        document.documentElement.setAttribute("data-theme", "light");
+        try { localStorage.setItem("dcs-theme", "light"); } catch (e) {}
+      }
+    });
+  }
+
   function initMouseGradient() {
     const heroes = document.querySelectorAll(".hero");
     if (!heroes.length) return;
@@ -102,6 +118,7 @@
 
   function boot() {
     safe(initNav, "initNav");
+    safe(initThemeToggle, "initThemeToggle");
     safe(initMouseGradient, "initMouseGradient");
     safe(initReveals, "initReveals");
     safe(initMagnetic, "initMagnetic");
