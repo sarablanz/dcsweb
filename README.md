@@ -33,7 +33,18 @@ GitHub Pages se actualiza solo, unos minutos después del push. No hace falta to
 - [ ] **Formularios**: crea una cuenta gratuita en [Formspree](https://formspree.io), crea un formulario y reemplaza `YOUR_FORM_ID` en:
       `consultoria.html`, `formacion.html`, `aula-digital-segura.html`, `contacto.html`.
       El plan gratuito de Formspree permite 50 envíos al mes.
-- [ ] Revisa los comentarios `<!-- TODO: ... -->` restantes en el código (apellido de Auri, dominio propio en las etiquetas Open Graph).
+## Dominio propio (dcsconsulting.es)
+
+El dominio se compró en DonDominio y usa sus servidores DNS (`ns1.dondominio.com` / `ns2.dondominio.com`), con un servicio de Mail asignado. Para que `dcsconsulting.es` muestre este sitio (en vez de `sarablanz.github.io/dcsweb`):
+
+1. **En el panel de DonDominio** (Dominio → DNS / Zona DNS del dominio):
+   - Desactiva la **"Parking page"** (si no, sobreescribe cualquier registro que agregues).
+   - Agrega 4 registros **A** en la raíz (`@`) apuntando a las IPs de GitHub Pages:
+     `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
+   - Agrega un registro **CNAME** para `www` → `sarablanz.github.io.`
+   - **No toques los registros MX** — esos son los que hacen funcionar el correo del dominio (el servicio Mail que ya tienes asignado).
+2. **En GitHub**: el archivo `CNAME` en la raíz del repo (ya incluido, contiene `dcsconsulting.es`) le dice a GitHub Pages qué dominio servir. Ve a `https://github.com/sarablanz/dcsweb/settings/pages` y confirma que en "Custom domain" aparece `dcsconsulting.es` con el check verde (puede tardar hasta 24h en verificar DNS) y activa **Enforce HTTPS** cuando esté disponible.
+3. Una vez propagado, actualiza los enlaces de Instagram/TikTok y cualquier material de marketing para usar `dcsconsulting.es` en vez del link de GitHub Pages.
 
 ## Nota sobre el nombre de marca
 
