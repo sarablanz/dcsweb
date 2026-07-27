@@ -35,6 +35,41 @@
     });
   }
 
+  function initRadarFormRedirect() {
+    const form = document.getElementById("radar-form");
+    if (!form) return;
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalText = submitBtn ? submitBtn.textContent : "";
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Enviando...";
+      }
+
+      fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" }
+      })
+        .then((response) => {
+          if (response.ok) {
+            window.location.href = "radar-gracias.html";
+          } else {
+            throw new Error("Formspree error");
+          }
+        })
+        .catch(() => {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalText;
+          }
+          alert("Hubo un problema al enviar el formulario. Intenta de nuevo o escríbenos a info@dcsconsulting.es.");
+        });
+    });
+  }
+
   function initMouseGradient() {
     const heroes = document.querySelectorAll(".hero");
     if (!heroes.length) return;
@@ -119,6 +154,7 @@
   function boot() {
     safe(initNav, "initNav");
     safe(initThemeToggle, "initThemeToggle");
+    safe(initRadarFormRedirect, "initRadarFormRedirect");
     safe(initMouseGradient, "initMouseGradient");
     safe(initReveals, "initReveals");
     safe(initMagnetic, "initMagnetic");

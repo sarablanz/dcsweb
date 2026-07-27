@@ -33,8 +33,18 @@ GitHub Pages se actualiza solo, unos minutos después del push. No hace falta to
 
 - [ ] **Checkout del ebook**: en `ebook.html`, reemplaza el `href="#"` de "Comprar ebook — $5" por tu producto en Gumroad, Hotmart o Payhip.
 - [ ] **Formularios**: crea una cuenta gratuita en [Formspree](https://formspree.io), crea un formulario y reemplaza `YOUR_FORM_ID` en:
-      `consultoria.html`, `formacion.html`, `aula-digital-segura.html`, `contacto.html`, `radar.html`.
-      El plan gratuito de Formspree permite 50 envíos al mes. En `radar.html` el formulario ya incluye un `_next` apuntando a `https://dcsconsulting.es/radar-gracias.html` — Formspree te deja ver cada envío (y contar cuántos) desde su panel, así que eso también te sirve como contador de descargas del Radar Cloud.
+      `consultoria.html`, `formacion.html`, `aula-digital-segura.html`, `contacto.html`.
+      El plan gratuito de Formspree permite 50 envíos al mes.
+
+## Formspree (cuenta ya creada)
+
+Cuenta: `dcsconsulting004@gmail.com`. Panel de formularios y envíos: [formspree.io/forms](https://formspree.io/forms) (recomendable guardarlo en marcadores).
+
+- `radar.html` ya usa el formulario real: `https://formspree.io/f/xlgqaark`. El envío se hace por JavaScript (`initRadarFormRedirect` en `js/main.js`) en vez del `_next` de Formspree, porque la redirección automática es una función de pago — así, tras enviar, el propio navegador te lleva a `radar-gracias.html`.
+- Ese formulario ya trae un `_autoresponse`: en cuanto alguien lo envía, le llega un correo automático con el link al Excel y al autodiagnóstico interactivo. No hace falta revisar manualmente ni reenviar nada.
+- El plan gratis (50 envíos/mes) no cobra automáticamente si te pasas — simplemente deja de aceptar envíos hasta el mes siguiente, a menos que tú decidas subir de plan.
+- Para exportar tus leads a Excel/CSV, revisa las opciones del panel de cada formulario en Formspree.
+
 ## Dominio propio (dcsconsulting.es)
 
 El dominio se compró en DonDominio y usa sus servidores DNS (`ns1.dondominio.com` / `ns2.dondominio.com`), con un servicio de Mail asignado. Para que `dcsconsulting.es` muestre este sitio (en vez de `sarablanz.github.io/dcsweb`):
