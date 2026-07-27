@@ -35,6 +35,25 @@
     });
   }
 
+  function initAutoplayVideos() {
+    const videos = document.querySelectorAll(".ebook-cover video");
+    if (!videos.length) return;
+
+    videos.forEach((video) => {
+      video.muted = true;
+      video.defaultMuted = true;
+      const tryPlay = () => {
+        const p = video.play();
+        if (p && p.catch) p.catch(() => {});
+      };
+      tryPlay();
+      video.addEventListener("loadeddata", tryPlay);
+      document.addEventListener("visibilitychange", () => {
+        if (document.visibilityState === "visible" && video.paused) tryPlay();
+      });
+    });
+  }
+
   function initRadarFormRedirect() {
     const form = document.getElementById("radar-form");
     if (!form) return;
@@ -155,6 +174,7 @@
     safe(initNav, "initNav");
     safe(initThemeToggle, "initThemeToggle");
     safe(initRadarFormRedirect, "initRadarFormRedirect");
+    safe(initAutoplayVideos, "initAutoplayVideos");
     safe(initMouseGradient, "initMouseGradient");
     safe(initReveals, "initReveals");
     safe(initMagnetic, "initMagnetic");
