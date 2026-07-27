@@ -1,9 +1,10 @@
 # DCS Consulting — sitio web
 
-Sitio estático (HTML/CSS/JS puro, sin frameworks ni build) con 8 páginas:
+Sitio estático (HTML/CSS/JS puro, sin frameworks ni build) con 9 páginas:
 
 - `index.html` — Home, con el embudo de 3 pasos (Radar gratis → Ebook $5 → Consultoría)
-- `radar.html` — Radar Cloud: autodiagnóstico gratuito en Excel (gancho del embudo)
+- `radar.html` — Radar Cloud: landing del autodiagnóstico gratuito (app interactiva o Excel descargable)
+- `radar-app.html` — el autodiagnóstico interactivo en sí: 14 preguntas paso a paso, resultado con semáforo de riesgo priorizado y guía de alertas nativas (M365/Google Workspace/AWS). Lógica en `js/radar-app.js`, datos embebidos en el propio script (mismos 14 riesgos y puntuaciones del kit Excel).
 - `consultoria.html` — Consultoría de riesgos con el método 3P+I (con formulario)
 - `formacion.html` — Rutas de formación en riesgos/data science (con formulario)
 - `aula-digital-segura.html` — Programa docente de violencia digital, coordinado por Auri (con formulario)
@@ -28,7 +29,6 @@ GitHub Pages se actualiza solo, unos minutos después del push. No hace falta to
 
 ## Pendientes antes de compartir el link
 
-- [ ] **Enlace de GitHub del Radar Cloud**: en `radar.html`, reemplaza el `href="#"` del botón "Descargar gratis en GitHub" por la URL real de tu repositorio (puede ser este mismo, con el Excel en una carpeta, o uno aparte).
 - [ ] **Checkout del ebook**: en `ebook.html`, reemplaza el `href="#"` de "Comprar ebook — $5" por tu producto en Gumroad, Hotmart o Payhip.
 - [ ] **Formularios**: crea una cuenta gratuita en [Formspree](https://formspree.io), crea un formulario y reemplaza `YOUR_FORM_ID` en:
       `consultoria.html`, `formacion.html`, `aula-digital-segura.html`, `contacto.html`.

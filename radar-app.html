@@ -4,16 +4,16 @@
 <script>(function(){try{if(localStorage.getItem("dcs-theme")==="light"){document.documentElement.setAttribute("data-theme","light");}}catch(e){}})();</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contacto | DCS Consulting</title>
-<meta name="description" content="Contacta a DCS Consulting para consultoría de riesgos, formación o el programa Aula Digital Segura.">
+<title>Radar Cloud — Autodiagnóstico interactivo | DCS Consulting</title>
+<meta name="description" content="Responde 14 preguntas y descubre en minutos qué tan expuesta está tu empresa al fraude en la nube, con resultado priorizado y semáforo de riesgo.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Contacto | DCS Consulting">
-<meta property="og:description" content="Contacta a DCS Consulting para consultoría de riesgos, formación o el programa Aula Digital Segura.">
-<meta property="og:url" content="https://dcsconsulting.es/contacto.html">
+<meta property="og:title" content="Radar Cloud — Autodiagnóstico interactivo | DCS Consulting">
+<meta property="og:description" content="Responde 14 preguntas y descubre en minutos qué tan expuesta está tu empresa al fraude en la nube, con resultado priorizado y semáforo de riesgo.">
+<meta property="og:url" content="https://dcsconsulting.es/radar-app.html">
 <meta property="og:image" content="https://dcsconsulting.es/assets/logo-full.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Contacto | DCS Consulting">
-<meta name="twitter:description" content="Contacta a DCS Consulting para consultoría de riesgos, formación o el programa Aula Digital Segura.">
+<meta name="twitter:title" content="Radar Cloud — Autodiagnóstico interactivo | DCS Consulting">
+<meta name="twitter:description" content="Responde 14 preguntas y descubre en minutos qué tan expuesta está tu empresa al fraude en la nube, con resultado priorizado y semáforo de riesgo.">
 <meta name="twitter:image" content="https://dcsconsulting.es/assets/logo-full.png">
 <link rel="stylesheet" href="css/style.css?v=20260805">
 <link rel="icon" type="image/png" href="assets/favicon.png">
@@ -31,13 +31,13 @@
     </a>
     <nav class="nav-links">
       <a href="index.html">Inicio</a>
-      <a href="radar.html">Radar</a>
+      <a href="radar.html" class="active">Radar</a>
       <a href="ebook.html">Ebook</a>
       <a href="consultoria.html">Consultoría</a>
       <a href="formacion.html">Formación</a>
       <a href="aula-digital-segura.html">Aula Digital Segura</a>
       <a href="sobre-nosotros.html">Nosotros</a>
-      <a href="contacto.html" class="active">Contacto</a>
+      <a href="contacto.html">Contacto</a>
       <a href="contacto.html" class="btn btn-primary">Solicitar consultoría</a>
     </nav>
     <button class="theme-toggle" aria-label="Cambiar tema claro/oscuro" title="Cambiar tema">
@@ -48,54 +48,17 @@
   </div>
 </header>
 
-<section class="hero" style="padding-bottom:24px;">
-  <canvas class="particle-swarm hero-swarm" aria-hidden="true"></canvas>
+<section style="padding:56px 0 8px;">
   <div class="container">
-    <span class="eyebrow">Contacto</span>
-    <h1>Hablemos de tu <span class="grad">próximo paso</span></h1>
-    <p class="lead">Ya sea consultoría para tu empresa, formación para ti o tu equipo, o llevar Aula Digital Segura a tu institución — cuéntanos qué necesitas.</p>
+    <div class="quiz-shell" style="text-align:center;">
+      <p style="margin:0;"><a href="radar.html" style="color:var(--text-muted); font-size:0.85rem;">← Volver a Radar Cloud</a></p>
+    </div>
   </div>
 </section>
 
-<section style="padding-top:24px;">
-  <div class="container two-col">
-    <div class="form-wrap" style="margin:0;">
-      <!-- TODO: reemplaza YOUR_FORM_ID por tu propio formulario de Formspree -->
-      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-        <div class="field">
-          <label for="nombre">Nombre completo</label>
-          <input type="text" id="nombre" name="nombre" required>
-        </div>
-        <div class="field">
-          <label for="email">Correo electrónico</label>
-          <input type="email" id="email" name="email" required>
-        </div>
-        <div class="field">
-          <label for="motivo">Motivo de contacto</label>
-          <select id="motivo" name="motivo">
-            <option>Consultoría de riesgos</option>
-            <option>Formación / cursos</option>
-            <option>Aula Digital Segura</option>
-            <option>Ebook</option>
-            <option>Otro</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="mensaje">Mensaje</label>
-          <textarea id="mensaje" name="mensaje" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary" style="width:100%;">Enviar mensaje</button>
-      </form>
-    </div>
-    <div>
-      <h2 class="mt-0">Otras formas de contactarnos</h2>
-      <ul class="list-check">
-        <li>Correo: <a href="mailto:info@dcsconsulting.es" style="color:var(--blue);">info@dcsconsulting.es</a></li>
-        <li>Instagram: <a href="https://www.instagram.com/dcs_consulting/" target="_blank" rel="noopener" style="color:var(--blue);">@dcs_consulting</a></li>
-        <li>TikTok: <a href="https://www.tiktok.com/@dcs_consulting" target="_blank" rel="noopener" style="color:var(--blue);">@dcs_consulting</a></li>
-      </ul>
-      <p style="color:var(--text-muted);">Respondemos en un plazo de 1 a 2 días hábiles.</p>
-    </div>
+<section style="padding-top:16px;">
+  <div class="container">
+    <div id="radar-app-root"></div>
   </div>
 </section>
 
@@ -105,7 +68,7 @@
       <div>
         <div class="logo" style="margin-bottom:14px;">
           <img src="assets/logo-full.png" alt="DCS Consulting" class="logo-img logo-on-dark">
-      <img src="assets/logo-full-dark.png" alt="DCS Consulting" class="logo-img logo-on-light">
+          <img src="assets/logo-full-dark.png" alt="DCS Consulting" class="logo-img logo-on-light">
         </div>
         <p>Consultoría en análisis de riesgos, cumplimiento normativo y educación digital.</p>
       </div>
@@ -131,6 +94,7 @@
 </footer>
 
 <script defer src="js/particle-swarm.js?v=20260805"></script>
+<script defer src="js/radar-app.js?v=20260805"></script>
 <script src="js/main.js?v=20260805"></script>
 </body>
 </html>
