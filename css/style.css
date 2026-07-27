@@ -118,6 +118,10 @@ img { max-width: 100%; display: block; }
 
 .site-footer .logo-img { height: 30px; }
 
+.logo-on-light { display: none; }
+:root[data-theme="light"] .logo-on-dark { display: none; }
+:root[data-theme="light"] .logo-on-light { display: block; }
+
 .nav-links {
   display: flex;
   align-items: center;
