@@ -4,17 +4,14 @@
 <script>(function(){try{if(localStorage.getItem("dcs-theme")==="light"){document.documentElement.setAttribute("data-theme","light");}}catch(e){}})();</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Radar Cloud — Autodiagnóstico interactivo | DCS Consulting</title>
-<meta name="description" content="Responde 14 preguntas y descubre en minutos qué tan expuesta está tu empresa al fraude en la nube, con resultado priorizado y semáforo de riesgo.">
+<title>Tu Radar Cloud está listo | DCS Consulting</title>
+<meta name="description" content="Accede a tu autodiagnóstico Radar Cloud, interactivo o en Excel.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Radar Cloud — Autodiagnóstico interactivo | DCS Consulting">
-<meta property="og:description" content="Responde 14 preguntas y descubre en minutos qué tan expuesta está tu empresa al fraude en la nube, con resultado priorizado y semáforo de riesgo.">
-<meta property="og:url" content="https://dcsconsulting.es/radar-app.html">
+<meta property="og:title" content="Tu Radar Cloud está listo | DCS Consulting">
+<meta property="og:description" content="Accede a tu autodiagnóstico Radar Cloud, interactivo o en Excel.">
+<meta property="og:url" content="https://dcsconsulting.es/radar-gracias.html">
 <meta property="og:image" content="https://dcsconsulting.es/assets/logo-full.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Radar Cloud — Autodiagnóstico interactivo | DCS Consulting">
-<meta name="twitter:description" content="Responde 14 preguntas y descubre en minutos qué tan expuesta está tu empresa al fraude en la nube, con resultado priorizado y semáforo de riesgo.">
-<meta name="twitter:image" content="https://dcsconsulting.es/assets/logo-full.png">
+<meta name="robots" content="noindex">
 <link rel="stylesheet" href="css/style.css?v=20260806">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,17 +45,16 @@
   </div>
 </header>
 
-<section style="padding:56px 0 8px;">
+<section class="hero">
+  <canvas class="particle-swarm hero-swarm" aria-hidden="true"></canvas>
   <div class="container">
-    <div class="quiz-shell" style="text-align:center;">
-      <p style="margin:0;"><a href="radar.html" style="color:var(--text-muted); font-size:0.85rem;">← Volver a Radar Cloud</a></p>
+    <span class="eyebrow">✓ Solicitud recibida</span>
+    <h1>Tu <span class="grad">Radar Cloud</span> está listo</h1>
+    <p class="lead">Gracias — elige cómo quieres hacer tu autodiagnóstico. Te llegará también una copia de este acceso a tu correo.</p>
+    <div class="hero-actions">
+      <a href="radar-app.html" class="btn btn-primary">Empezar autodiagnóstico interactivo →</a>
+      <a href="assets/downloads/Radar-Cloud-DCS-Nivel1.xlsx" class="btn btn-outline">Descargar el Excel</a>
     </div>
-  </div>
-</section>
-
-<section style="padding-top:16px;">
-  <div class="container">
-    <div id="radar-app-root"></div>
   </div>
 </section>
 
@@ -94,7 +90,6 @@
 </footer>
 
 <script defer src="js/particle-swarm.js?v=20260806"></script>
-<script defer src="js/radar-app.js?v=20260806"></script>
 <script src="js/main.js?v=20260806"></script>
 </body>
 </html>

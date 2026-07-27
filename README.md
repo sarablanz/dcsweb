@@ -1,9 +1,10 @@
 # DCS Consulting — sitio web
 
-Sitio estático (HTML/CSS/JS puro, sin frameworks ni build) con 9 páginas:
+Sitio estático (HTML/CSS/JS puro, sin frameworks ni build) con 11 páginas:
 
 - `index.html` — Home, con el embudo de 3 pasos (Radar gratis → Ebook $5 → Consultoría)
-- `radar.html` — Radar Cloud: landing del autodiagnóstico gratuito (app interactiva o Excel descargable)
+- `radar.html` — Radar Cloud: landing con un formulario corto (nombre, empresa, email + consentimiento) que da acceso al autodiagnóstico. Sirve para contar solicitudes y capturar leads en vez de repartir el Excel en link directo.
+- `radar-gracias.html` — página de agradecimiento tras enviar el formulario de `radar.html` (vía redirect `_next` de Formspree): da acceso al autodiagnóstico interactivo y al Excel.
 - `radar-app.html` — el autodiagnóstico interactivo en sí: 14 preguntas paso a paso, resultado con semáforo de riesgo priorizado y guía de alertas nativas (M365/Google Workspace/AWS). Lógica en `js/radar-app.js`, datos embebidos en el propio script (mismos 14 riesgos y puntuaciones del kit Excel).
 - `consultoria.html` — Consultoría de riesgos con el método 3P+I (con formulario)
 - `formacion.html` — Rutas de formación en riesgos/data science (con formulario)
@@ -11,6 +12,7 @@ Sitio estático (HTML/CSS/JS puro, sin frameworks ni build) con 9 páginas:
 - `ebook.html` — Venta del ebook "El auténtico valor del análisis de riesgos en la era digital" ($5), con portada animada
 - `sobre-nosotros.html` — Equipo: Saray (fundadora), Auri (Aula Digital Segura), Orlando (Product Manager)
 - `contacto.html` — Formulario de contacto general
+- `privacidad.html` — Política de privacidad (plantilla base, revisar con un profesional legal antes de darla por definitiva)
 
 ## Publicado en
 
@@ -31,8 +33,8 @@ GitHub Pages se actualiza solo, unos minutos después del push. No hace falta to
 
 - [ ] **Checkout del ebook**: en `ebook.html`, reemplaza el `href="#"` de "Comprar ebook — $5" por tu producto en Gumroad, Hotmart o Payhip.
 - [ ] **Formularios**: crea una cuenta gratuita en [Formspree](https://formspree.io), crea un formulario y reemplaza `YOUR_FORM_ID` en:
-      `consultoria.html`, `formacion.html`, `aula-digital-segura.html`, `contacto.html`.
-      El plan gratuito de Formspree permite 50 envíos al mes.
+      `consultoria.html`, `formacion.html`, `aula-digital-segura.html`, `contacto.html`, `radar.html`.
+      El plan gratuito de Formspree permite 50 envíos al mes. En `radar.html` el formulario ya incluye un `_next` apuntando a `https://dcsconsulting.es/radar-gracias.html` — Formspree te deja ver cada envío (y contar cuántos) desde su panel, así que eso también te sirve como contador de descargas del Radar Cloud.
 ## Dominio propio (dcsconsulting.es)
 
 El dominio se compró en DonDominio y usa sus servidores DNS (`ns1.dondominio.com` / `ns2.dondominio.com`), con un servicio de Mail asignado. Para que `dcsconsulting.es` muestre este sitio (en vez de `sarablanz.github.io/dcsweb`):

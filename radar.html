@@ -15,7 +15,7 @@
 <meta name="twitter:title" content="Radar Cloud gratis | DCS Consulting">
 <meta name="twitter:description" content="Radar Cloud DCS: autodiagnóstico gratuito del pilar Plataformas del método 3P+I. Descubre en 15 minutos qué tan expuesta está tu empresa al fraude en la nube.">
 <meta name="twitter:image" content="https://dcsconsulting.es/assets/logo-full.png">
-<link rel="stylesheet" href="css/style.css?v=20260805">
+<link rel="stylesheet" href="css/style.css?v=20260806">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -55,8 +55,40 @@
     <h1>Descubre en <span class="grad">15 minutos</span> qué tan expuesta está tu empresa al fraude en la nube</h1>
     <p class="lead">Radar Cloud DCS es un autodiagnóstico gratuito basado en el método 3P+I. Responde un checklist de 14 señales de fraude sobre tu correo, accesos y copias de seguridad, y obtén un resultado priorizado con semáforo — sin coste y sin depender de un departamento de TI.</p>
     <div class="hero-actions">
-      <a href="radar-app.html" class="btn btn-primary">Empezar autodiagnóstico →</a>
-      <a href="assets/downloads/Radar-Cloud-DCS-Nivel1.xlsx" class="btn btn-outline">Descargar el Excel</a>
+      <a href="#form" class="btn btn-primary">Acceder gratis ↓</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-alt">
+  <div class="container">
+    <div class="form-wrap" id="form" style="max-width:520px;">
+      <div class="section-head" style="margin-bottom:28px;">
+        <h2 style="margin-bottom:8px;">Accede al Radar Cloud</h2>
+        <p>Déjanos tus datos y elige si prefieres el autodiagnóstico interactivo o el Excel.</p>
+      </div>
+      <!-- TODO: reemplaza YOUR_FORM_ID por tu propio formulario de Formspree -->
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <input type="hidden" name="_next" value="https://dcsconsulting.es/radar-gracias.html">
+        <input type="hidden" name="_subject" value="Nueva solicitud del Radar Cloud">
+        <div class="field">
+          <label for="radar-nombre">Nombre completo</label>
+          <input type="text" id="radar-nombre" name="nombre" required>
+        </div>
+        <div class="field">
+          <label for="radar-empresa">Empresa</label>
+          <input type="text" id="radar-empresa" name="empresa">
+        </div>
+        <div class="field">
+          <label for="radar-email">Correo electrónico</label>
+          <input type="email" id="radar-email" name="email" required>
+        </div>
+        <div class="field field-checkbox">
+          <input type="checkbox" id="radar-consentimiento" name="consentimiento" value="si" required>
+          <label for="radar-consentimiento">Acepto que DCS Consulting use mis datos para enviarme este recurso y contactarme al respecto, según la <a href="privacidad.html">política de privacidad</a>.</label>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;">Acceder al Radar Cloud →</button>
+      </form>
     </div>
   </div>
 </section>
@@ -99,8 +131,8 @@
     </div>
     <div class="steps">
       <div class="step">
-        <h3>Empieza el autodiagnóstico</h3>
-        <p>Gratis y sin registro, directo en el navegador (o descarga el Excel si lo prefieres).</p>
+        <h3>Completa tus datos</h3>
+        <p>Un formulario corto y gratis — elige después si prefieres el autodiagnóstico interactivo o el Excel.</p>
       </div>
       <div class="step">
         <h3>Responde el checklist</h3>
@@ -159,11 +191,11 @@
         <a href="https://www.tiktok.com/@dcs_consulting" target="_blank" rel="noopener">TikTok @dcs_consulting</a>
       </div>
     </div>
-    <div class="footer-bottom">© 2026 DCS Consulting. Todos los derechos reservados.</div>
+    <div class="footer-bottom">© 2026 DCS Consulting. Todos los derechos reservados. · <a href="privacidad.html" style="color:inherit;">Privacidad</a></div>
   </div>
 </footer>
 
-<script defer src="js/particle-swarm.js?v=20260805"></script>
-<script src="js/main.js?v=20260805"></script>
+<script defer src="js/particle-swarm.js?v=20260806"></script>
+<script src="js/main.js?v=20260806"></script>
 </body>
 </html>
