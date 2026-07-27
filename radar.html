@@ -65,12 +65,13 @@
     <div class="form-wrap" id="form" style="max-width:520px;">
       <div class="section-head" style="margin-bottom:28px;">
         <h2 style="margin-bottom:8px;">Accede al Radar Cloud</h2>
-        <p>Déjanos tus datos y elige si prefieres el autodiagnóstico interactivo o el Excel.</p>
+        <p>Déjanos tus datos: te enviamos el Excel a tu correo y te damos acceso al autodiagnóstico interactivo.</p>
       </div>
       <!-- TODO: reemplaza YOUR_FORM_ID por tu propio formulario de Formspree -->
       <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
         <input type="hidden" name="_next" value="https://dcsconsulting.es/radar-gracias.html">
         <input type="hidden" name="_subject" value="Nueva solicitud del Radar Cloud">
+        <input type="hidden" name="_autoresponse" value="¡Gracias por tu interés en Radar Cloud DCS! Aquí tienes tu Excel de autodiagnóstico gratuito: https://dcsconsulting.es/assets/downloads/Radar-Cloud-DCS-Nivel1.xlsx&#10;&#10;Si prefieres la versión interactiva paso a paso, puedes hacerla aquí: https://dcsconsulting.es/radar-app.html&#10;&#10;— Equipo DCS Consulting">
         <div class="field">
           <label for="radar-nombre">Nombre completo</label>
           <input type="text" id="radar-nombre" name="nombre" required>
