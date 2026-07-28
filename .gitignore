@@ -8,3 +8,6 @@ Thumbs.db
 
 # Documentos de referencia (no son parte del sitio)
 *.pdf
+
+# Excepción: PDFs que sí se sirven como descarga desde el sitio
+!assets/downloads/*.pdf
