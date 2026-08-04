@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<script>(function(){try{if(localStorage.getItem("dcs-theme")==="light"){document.documentElement.setAttribute("data-theme","light");}}catch(e){}})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phishing mediante código de dispositivo: cómo salta el doble factor de autenticación | DCS Consulting</title>
+<meta name="description" content="El phishing mediante código de dispositivo alcanza cifras récord en 2026 y se salta el doble factor de autenticación, incluidas las passkeys. Qué es, por qué es tan difícil de detectar y cómo protegerte en casa y en tu negocio.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Phishing mediante código de dispositivo: cómo salta el doble factor de autenticación">
+<meta property="og:description" content="Una técnica de phishing en máximos históricos en 2026 que se salta el doble factor de autenticación, incluidas las passkeys. Qué es y cómo protegerte.">
+<meta property="og:url" content="https://dcsconsulting.es/blog-phishing-codigo-dispositivo.html">
+<meta property="og:image" content="https://dcsconsulting.es/assets/logo-full.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Phishing mediante código de dispositivo: cómo salta el doble factor de autenticación">
+<meta name="twitter:description" content="Una técnica de phishing en máximos históricos en 2026 que se salta el doble factor de autenticación, incluidas las passkeys. Qué es y cómo protegerte.">
+<meta name="twitter:image" content="https://dcsconsulting.es/assets/logo-full.png">
+<link rel="stylesheet" href="css/style.css?v=20260808">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo">
+      <img src="assets/logo-full.png" alt="DCS Consulting" class="logo-img logo-on-dark">
+      <img src="assets/logo-full-dark.png" alt="DCS Consulting" class="logo-img logo-on-light">
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">Inicio</a>
+      <a href="radar.html">Radar</a>
+      <a href="ebook.html">Ebook</a>
+      <a href="consultoria.html">Consultoría</a>
+      <a href="blog.html" class="active">Blog</a>
+      <a href="sobre-nosotros.html">Nosotros</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="contacto.html" class="btn btn-primary">Solicitar consultoría</a>
+    </nav>
+    <button class="theme-toggle" aria-label="Cambiar tema claro/oscuro" title="Cambiar tema">
+      <svg class="icon-moon" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21.752 15.002A9.72 9.72 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-6.364-.386 1.591-1.591M3 12h2.25m.386-6.364 1.591 1.591M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"/></svg>
+    </button>
+    <button class="nav-toggle" aria-label="Abrir menú">☰</button>
+  </div>
+</header>
+
+<section class="hero" style="padding-bottom:24px;">
+  <canvas class="particle-swarm hero-swarm" aria-hidden="true"></canvas>
+  <div class="container">
+    <span class="eyebrow">Blog · Ciberseguridad</span>
+    <h1>Phishing mediante código de dispositivo: el ataque que salta el <span class="grad">doble factor de autenticación</span></h1>
+    <p class="lead">4 de agosto de 2026 · 6 min de lectura · Por Saray Blanco Alzola</p>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <div class="container" style="max-width:760px;">
+
+    <div class="card" style="padding:28px; margin-bottom:36px;">
+      <svg viewBox="0 0 920 200" role="img" aria-label="Diagrama: un código de dispositivo obtenido por phishing permite iniciar sesión y saltar el doble factor de autenticación, concediendo acceso total a la cuenta." style="width:100%; height:auto; display:block;">
+        <style>
+          .fd-card{fill:var(--bg-alt);stroke:var(--border);stroke-width:1;}
+          .fd-muted{fill:var(--text-muted);font-family:"Geist","IBM Plex Sans",sans-serif;}
+          .fd-text{fill:var(--text);font-family:"Geist","IBM Plex Sans",sans-serif;}
+          .fd-line{stroke:var(--text-muted);stroke-width:1.5;stroke-dasharray:5 5;fill:none;opacity:0.6;}
+          .fd-arrow{fill:var(--text-muted);opacity:0.6;}
+          .fd-hook{stroke:var(--orange);stroke-width:4;fill:none;stroke-linecap:round;}
+        </style>
+
+        <path class="fd-hook" d="M52,8 L52,55 C52,80 30,80 30,100 C30,120 55,124 62,104"/>
+        <rect class="fd-card" x="4" y="118" width="168" height="66" rx="10"/>
+        <text class="fd-muted" x="88" y="138" text-anchor="middle" font-size="9.5" letter-spacing="0.5">CÓDIGO DE DISPOSITIVO</text>
+        <text class="fd-text" x="88" y="164" text-anchor="middle" font-size="16" font-weight="700" font-family="monospace">X7G9-3PLQ</text>
+
+        <line class="fd-line" x1="176" y1="150" x2="248" y2="150"/>
+        <polygon class="fd-arrow" points="248,150 238,145 238,155"/>
+
+        <rect class="fd-card" x="256" y="40" width="180" height="150" rx="12"/>
+        <circle cx="346" cy="80" r="16" fill="var(--blue)"/>
+        <circle cx="346" cy="73" r="6" fill="var(--bg-alt)"/>
+        <path d="M334,88 a12,10 0 0 1 24,0" fill="var(--bg-alt)"/>
+        <circle cx="304" cy="118" r="3.5" class="fd-muted"/>
+        <circle cx="316" cy="118" r="3.5" class="fd-muted"/>
+        <circle cx="328" cy="118" r="3.5" class="fd-muted"/>
+        <circle cx="340" cy="118" r="3.5" class="fd-muted"/>
+        <circle cx="352" cy="118" r="3.5" class="fd-muted"/>
+        <circle cx="364" cy="118" r="3.5" class="fd-muted"/>
+        <rect x="286" y="138" width="120" height="28" rx="14" fill="var(--blue)"/>
+        <text x="346" y="157" text-anchor="middle" font-size="9.5" font-weight="700" fill="#fff" font-family="Geist,sans-serif">INICIAR SESIÓN</text>
+        <circle cx="346" cy="180" r="9" fill="var(--success)"/>
+        <path d="M341,180 l4,4 l7,-8" stroke="#0a0e27" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+        <line class="fd-line" x1="436" y1="115" x2="500" y2="115"/>
+        <polygon class="fd-arrow" points="500,115 490,110 490,120"/>
+        <line x1="450" y1="98" x2="478" y2="132" stroke="var(--danger)" stroke-width="5" stroke-linecap="round"/>
+        <line x1="478" y1="98" x2="450" y2="132" stroke="var(--danger)" stroke-width="5" stroke-linecap="round"/>
+
+        <rect class="fd-card" x="508" y="50" width="90" height="130" rx="12"/>
+        <text class="fd-muted" x="553" y="76" text-anchor="middle" font-size="10" font-weight="700">2FA</text>
+        <rect x="522" y="88" width="62" height="30" rx="5" fill="var(--bg-card)" stroke="var(--border)"/>
+        <text class="fd-text" x="553" y="108" text-anchor="middle" font-size="11" font-family="monospace">123 456</text>
+        <rect x="536" y="132" width="34" height="34" rx="17" fill="none" stroke="var(--text-muted)" stroke-width="2"/>
+        <circle cx="553" cy="149" r="3" fill="var(--text-muted)"/>
+        <rect x="549" y="149" width="8" height="10" fill="var(--text-muted)"/>
+
+        <line class="fd-line" x1="606" y1="115" x2="672" y2="115"/>
+        <polygon class="fd-arrow" points="672,115 662,110 662,120"/>
+
+        <rect x="680" y="40" width="184" height="150" rx="12" fill="rgba(239,90,90,0.08)" stroke="var(--danger)" stroke-width="1.5"/>
+        <circle cx="772" cy="88" r="24" fill="rgba(239,90,90,0.15)"/>
+        <rect x="760" y="86" width="24" height="20" rx="4" fill="var(--danger)"/>
+        <path d="M764,86 v-8 a8,8 0 0 1 16,0 v8" fill="none" stroke="var(--danger)" stroke-width="3.5"/>
+        <text x="772" y="145" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--danger)" font-family="Geist,sans-serif">ACCESO</text>
+        <text x="772" y="162" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--danger)" font-family="Geist,sans-serif">CONCEDIDO</text>
+      </svg>
+
+      <div class="grid" style="margin-top:32px; gap:20px;">
+        <div>
+          <p class="post-meta" style="font-weight:700; color:var(--text);">🪝 Engaño inicial</p>
+          <p style="color:var(--text-muted); font-size:0.9rem; margin:0;">El atacante consigue que la víctima copie un código de dispositivo legítimo mediante phishing.</p>
+        </div>
+        <div>
+          <p class="post-meta" style="font-weight:700; color:var(--text);">🔓 Autenticación sin fricción</p>
+          <p style="color:var(--text-muted); font-size:0.9rem; margin:0;">Ese código autoriza el inicio de sesión sin volver a pedir el segundo factor.</p>
+        </div>
+        <div>
+          <p class="post-meta" style="font-weight:700; color:var(--text);">🕵️ Acceso total</p>
+          <p style="color:var(--text-muted); font-size:0.9rem; margin:0;">El 2FA queda saltado: el atacante obtiene acceso completo a la cuenta.</p>
+        </div>
+      </div>
+
+      <div class="callout" style="border-left-color:var(--danger); margin-bottom:0; margin-top:24px;">
+        <p style="font-weight:700; color:var(--danger);">⚠ Riesgo crítico</p>
+        <p>Este método permite a los atacantes eludir las protecciones tradicionales y comprometer cuentas incluso con el doble factor de autenticación activado.</p>
+      </div>
+    </div>
+
+    <p style="color:var(--text-muted);">Mientras preparaba el paso a paso para explicar, de forma sencilla, cómo activar el doble factor de autenticación en casa o en el negocio, me encontré con una noticia que me detuvo: existe una forma de phishing capaz de saltarse esa segunda capa de seguridad en la que tanto confiamos.</p>
+
+    <p style="color:var(--text-muted);">Se llama <strong>phishing mediante código de dispositivo</strong>. No es nuevo —el vector existe desde 2020—, pero en 2026 ha alcanzado cifras récord. No es un tema que podamos dar por controlado.</p>
+
+    <h2>Un ejemplo para salir de lo abstracto</h2>
+    <p style="color:var(--text-muted);">Imagina que estás en casa, tranquilo, y vas a hacer una transferencia —por ejemplo, para pagar la inscripción del colegio de tu hijo— desde la cuenta bancaria donde también está el dinero de tu negocio. Te sientes protegido porque tienes el doble factor de autenticación activado; es lo que has leído, lo que has escuchado, lo que dicen los expertos.</p>
+    <p style="color:var(--text-muted);">Pero este ataque desafía cualquier forma de autenticación, incluidas las claves de acceso (<em>passkeys</em>). Es decir: puedes acceder correctamente a tu sesión y, aun así, terminar frente a una página de phishing. El atacante solo necesita que copies un código corto, lo introduzcas en la página de inicio de sesión legítima de tu proveedor (por ejemplo, Microsoft), selecciones tu cuenta y hagas clic en "permitir". Ese es todo el ataque.</p>
+
+    <div class="callout">
+      <p>Ni las claves de acceso, ni las llaves de seguridad física, ni el MFA reforzado contra phishing detienen esto, porque el flujo de código de dispositivo no depende del mecanismo de autenticación que uses.</p>
+      <p>El ataque no compite contra tu contraseña: se aprovecha de que demostrar tu identidad y conceder acceso a una aplicación son dos pasos distintos, y la mayoría de los controles de seguridad solo protegen el primero.</p>
+    </div>
+
+    <p style="color:var(--text-muted);">Por ahora, cerca del 99% de los casos apunta a cuentas del ecosistema Microsoft (Hotmail, Copilot, Office 365), aunque la técnica es replicable en cualquier plataforma.</p>
+
+    <h2 style="margin-top:32px;">¿Por qué es tan difícil detectarlo?</h2>
+    <p style="color:var(--text-muted);">La clave está en entender que la detección debe producirse donde ocurre el ataque, no antes. Estas páginas de phishing pueden llegar por cualquier canal —correo, mensajería, redes sociales, buscadores, sitios comprometidos— y, como el usuario introduce el código directamente en la URL legítima del proveedor, ningún filtro de correo, proxy de red o sistema de reputación de dominios puede bloquearlo: la infraestructura usada para el engaño es, técnicamente, inofensiva.</p>
+    <p style="color:var(--text-muted);">La medida más habitual en entornos corporativos es restringir los flujos de código de dispositivo mediante políticas de acceso condicional, pero no siempre es viable sin afectar herramientas legítimas de desarrollo o dispositivos con pantalla limitada. Y aunque una empresa blinde su entorno Microsoft, queda expuesta si el mismo ataque se dirige a GitHub, AWS u otras plataformas sin controles equivalentes.</p>
+
+    <h2 style="margin-top:32px;">La familia como punto de entrada</h2>
+    <p style="color:var(--text-muted);">Aquí quiero volver a lo que más me importa: nuestros hijos y familiares, sin saberlo, van dejando huellas —fotos, rutinas, fechas de pago, nombres de colegios— que un atacante puede observar y analizar para construir ingeniería social a su medida.</p>
+    <p style="color:var(--text-muted);">Por eso, si estás por iniciar el proceso de inscripción escolar, o si en vacaciones vas a pagar un hotel o una compra, el consejo es simple:</p>
+    <ul class="list-check">
+      <li>No vinculas los pagos familiares directamente a la cuenta donde está el dinero de tu empresa. Sepáralas.</li>
+      <li>Desconfía de cualquier página que te pida "introducir un código" para iniciar sesión en otro sitio, aunque la URL de destino sea legítima.</li>
+      <li>Revisa periódicamente las sesiones y dispositivos conectados a tus cuentas Microsoft, Google, GitHub o AWS.</li>
+    </ul>
+    <p style="color:var(--text-muted);">Es el primer blindaje, antes de cualquier herramienta técnica.</p>
+
+    <div style="margin:40px 0;">
+      <div class="cta-banner" style="padding:40px;">
+        <h2 style="font-size:1.4rem;">¿Quieres saber cómo de expuesta está tu empresa?</h2>
+        <p>El Radar Cloud es un autodiagnóstico gratuito de 15 minutos para detectar este tipo de brechas antes de que las use alguien más.</p>
+        <a href="radar.html" class="btn btn-primary">Probar el Radar gratis</a>
+      </div>
+    </div>
+
+    <h2 style="margin-top:8px;">Fuentes</h2>
+    <p style="color:var(--text-muted); font-size:0.9rem;">Fuente primaria oficial:</p>
+    <ul class="source-list">
+      <li>Federal Bureau of Investigation. (2026, 21 de mayo). <em>Kali365 phishing-as-a-service kit hijacks Microsoft 365 access tokens</em> (PSA260521). Internet Crime Complaint Center. <a href="https://www.ic3.gov/PSA/2026/PSA260521" target="_blank" rel="noopener">ic3.gov/PSA/2026/PSA260521</a></li>
+    </ul>
+    <p style="color:var(--text-muted); font-size:0.9rem; margin-top:20px;">Fuentes secundarias y prensa especializada (contexto, cifras y evolución del vector):</p>
+    <ul class="source-list">
+      <li>The Hacker News. (2026, julio). <em>6 reasons why device code phishing is the fastest-growing threat of 2026</em>. <a href="https://thehackernews.com/2026/07/6-reasons-why-device-code-phishing-is.html" target="_blank" rel="noopener">thehackernews.com</a></li>
+      <li>Push Security. (2026). <em>Analyzing the rise in device code phishing attacks in 2026</em>. <a href="https://pushsecurity.com/blog/device-code-phishing" target="_blank" rel="noopener">pushsecurity.com/blog/device-code-phishing</a></li>
+      <li>CyberScoop. (2026, 22 de mayo). <em>FBI warns about fast-growing phishing kit targeting Microsoft 365 users</em>. <a href="https://cyberscoop.com/fbi-phishing-kali365-microsoft365-access-tokens/" target="_blank" rel="noopener">cyberscoop.com</a></li>
+      <li>BleepingComputer. (2026, 25 de mayo). <em>FBI warns of Kali365 phishing service targeting Microsoft 365 accounts</em>. <a href="https://www.bleepingcomputer.com/news/security/fbi-warns-of-kali365-phishing-service-targeting-microsoft-365-accounts/" target="_blank" rel="noopener">bleepingcomputer.com</a></li>
+    </ul>
+
+    <p style="margin-top:40px;"><a href="blog.html" style="color:var(--blue); font-weight:600;">← Volver al blog</a></p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="logo" style="margin-bottom:14px;">
+          <img src="assets/logo-full.png" alt="DCS Consulting" class="logo-img logo-on-dark">
+      <img src="assets/logo-full-dark.png" alt="DCS Consulting" class="logo-img logo-on-light">
+        </div>
+        <p>Consultoría en análisis de riesgos y compliance para PYMEs.</p>
+      </div>
+      <div>
+        <h4>Explora</h4>
+        <a href="radar.html">Radar Cloud</a>
+        <a href="ebook.html">Ebook</a>
+        <a href="consultoria.html">Consultoría</a>
+        <a href="blog.html">Blog</a>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <p><a href="mailto:info@dcsconsulting.es">info@dcsconsulting.es</a></p>
+        <a href="contacto.html">Solicitar consultoría</a>
+        <a href="sobre-nosotros.html">Sobre nosotros</a>
+        <a href="https://www.instagram.com/dcs_consulting/" target="_blank" rel="noopener">Instagram @dcs_consulting</a>
+        <a href="https://www.tiktok.com/@dcs_consulting" target="_blank" rel="noopener">TikTok @dcs_consulting</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 DCS Consulting. Todos los derechos reservados. · <a href="privacidad.html" style="color:inherit;">Privacidad</a>
+    </div>
+  </div>
+</footer>
+
+<script defer src="js/particle-swarm.js?v=20260808"></script>
+<script src="js/main.js?v=20260808"></script>
+</body>
+</html>

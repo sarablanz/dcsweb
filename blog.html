@@ -4,16 +4,16 @@
 <script>(function(){try{if(localStorage.getItem("dcs-theme")==="light"){document.documentElement.setAttribute("data-theme","light");}}catch(e){}})();</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contacto | DCS Consulting</title>
-<meta name="description" content="Contacta a DCS Consulting para consultoría de riesgos.">
+<title>Blog | DCS Consulting</title>
+<meta name="description" content="Reflexiones y alertas sobre análisis de riesgos, ciberseguridad y compliance para PYMEs, por DCS Consulting.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Contacto | DCS Consulting">
-<meta property="og:description" content="Contacta a DCS Consulting para consultoría de riesgos.">
-<meta property="og:url" content="https://dcsconsulting.es/contacto.html">
+<meta property="og:title" content="Blog | DCS Consulting">
+<meta property="og:description" content="Reflexiones y alertas sobre análisis de riesgos, ciberseguridad y compliance para PYMEs, por DCS Consulting.">
+<meta property="og:url" content="https://dcsconsulting.es/blog.html">
 <meta property="og:image" content="https://dcsconsulting.es/assets/logo-full.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Contacto | DCS Consulting">
-<meta name="twitter:description" content="Contacta a DCS Consulting para consultoría de riesgos.">
+<meta name="twitter:title" content="Blog | DCS Consulting">
+<meta name="twitter:description" content="Reflexiones y alertas sobre análisis de riesgos, ciberseguridad y compliance para PYMEs, por DCS Consulting.">
 <meta name="twitter:image" content="https://dcsconsulting.es/assets/logo-full.png">
 <link rel="stylesheet" href="css/style.css?v=20260808">
 <link rel="icon" type="image/png" href="assets/favicon.png">
@@ -34,9 +34,9 @@
       <a href="radar.html">Radar</a>
       <a href="ebook.html">Ebook</a>
       <a href="consultoria.html">Consultoría</a>
-      <a href="blog.html">Blog</a>
+      <a href="blog.html" class="active">Blog</a>
       <a href="sobre-nosotros.html">Nosotros</a>
-      <a href="contacto.html" class="active">Contacto</a>
+      <a href="contacto.html">Contacto</a>
       <a href="contacto.html" class="btn btn-primary">Solicitar consultoría</a>
     </nav>
     <button class="theme-toggle" aria-label="Cambiar tema claro/oscuro" title="Cambiar tema">
@@ -50,48 +50,32 @@
 <section class="hero" style="padding-bottom:24px;">
   <canvas class="particle-swarm hero-swarm" aria-hidden="true"></canvas>
   <div class="container">
-    <span class="eyebrow">Contacto</span>
-    <h1>Hablemos de tu <span class="grad">próximo paso</span></h1>
-    <p class="lead">Cuéntanos qué necesita tu empresa en análisis de riesgos y compliance.</p>
+    <span class="eyebrow">Blog</span>
+    <h1>Riesgo y seguridad, explicados con <span class="grad">casos reales</span></h1>
+    <p class="lead">Alertas, reflexiones y análisis sobre ciberseguridad, compliance y protección digital, pensados para PYMEs y familias.</p>
   </div>
 </section>
 
-<section style="padding-top:24px;">
-  <div class="container two-col">
-    <div class="form-wrap" style="margin:0;">
-      <!-- TODO: reemplaza YOUR_FORM_ID por tu propio formulario de Formspree -->
-      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-        <div class="field">
-          <label for="nombre">Nombre completo</label>
-          <input type="text" id="nombre" name="nombre" required>
-        </div>
-        <div class="field">
-          <label for="email">Correo electrónico</label>
-          <input type="email" id="email" name="email" required>
-        </div>
-        <div class="field">
-          <label for="motivo">Motivo de contacto</label>
-          <select id="motivo" name="motivo">
-            <option>Consultoría de riesgos</option>
-            <option>Ebook</option>
-            <option>Otro</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="mensaje">Mensaje</label>
-          <textarea id="mensaje" name="mensaje" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary" style="width:100%;">Enviar mensaje</button>
-      </form>
+<section style="padding-top:0;">
+  <div class="container">
+    <div class="grid grid-2">
+      <div class="card post-card">
+        <span class="tag">Ciberseguridad</span>
+        <h3>Phishing mediante código de dispositivo: el ataque que salta el doble factor de autenticación</h3>
+        <p class="post-meta">4 de agosto de 2026 · 6 min de lectura</p>
+        <p class="post-excerpt">Existe una técnica de phishing en máximos históricos en 2026 que no compite contra tu contraseña ni contra tus llaves de seguridad: se salta directamente el doble factor de autenticación, incluidas las passkeys. Qué es, por qué es tan difícil de detectar y qué puedes hacer en casa y en tu negocio.</p>
+        <p><a href="blog-phishing-codigo-dispositivo.html" style="color:var(--blue); font-weight:600;">Leer el artículo →</a></p>
+      </div>
     </div>
-    <div>
-      <h2 class="mt-0">Otras formas de contactarnos</h2>
-      <ul class="list-check">
-        <li>Correo: <a href="mailto:info@dcsconsulting.es" style="color:var(--blue);">info@dcsconsulting.es</a></li>
-        <li>Instagram: <a href="https://www.instagram.com/dcs_consulting/" target="_blank" rel="noopener" style="color:var(--blue);">@dcs_consulting</a></li>
-        <li>TikTok: <a href="https://www.tiktok.com/@dcs_consulting" target="_blank" rel="noopener" style="color:var(--blue);">@dcs_consulting</a></li>
-      </ul>
-      <p style="color:var(--text-muted);">Respondemos en un plazo de 1 a 2 días hábiles.</p>
+  </div>
+</section>
+
+<section class="section-alt">
+  <div class="container">
+    <div class="cta-banner">
+      <h2>¿Quieres saber cómo está tu empresa frente a este tipo de riesgos?</h2>
+      <p>Empieza con el autodiagnóstico gratuito del Radar Cloud, en 15 minutos.</p>
+      <a href="radar.html" class="btn btn-primary">Probar el Radar gratis</a>
     </div>
   </div>
 </section>
@@ -122,7 +106,9 @@
         <a href="https://www.tiktok.com/@dcs_consulting" target="_blank" rel="noopener">TikTok @dcs_consulting</a>
       </div>
     </div>
-    <div class="footer-bottom">© 2026 DCS Consulting. Todos los derechos reservados. · <a href="privacidad.html" style="color:inherit;">Privacidad</a></div>
+    <div class="footer-bottom">
+      © 2026 DCS Consulting. Todos los derechos reservados. · <a href="privacidad.html" style="color:inherit;">Privacidad</a>
+    </div>
   </div>
 </footer>
 

@@ -998,6 +998,54 @@ form textarea { resize: vertical; min-height: 120px; }
 
 .quiz-card .tag { display: inline-block; margin-bottom: 18px; }
 
+/* ---------- Blog ---------- */
+
+.post-meta {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin: 0 0 4px;
+}
+
+.post-card p.post-excerpt {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin: 10px 0 16px;
+}
+
+.callout {
+  border-left: 3px solid var(--purple);
+  background: var(--bg-card);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 20px 24px;
+  margin: 28px 0;
+}
+
+.callout p { color: var(--text-muted); margin: 0; }
+.callout p + p { margin-top: 10px; }
+
+.source-list {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+  font-size: 0.85rem;
+}
+
+.source-list li {
+  color: var(--text-muted);
+  margin-bottom: 10px;
+  padding-left: 18px;
+  position: relative;
+}
+
+.source-list li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--blue);
+}
+
+.source-list a { color: var(--blue); word-break: break-word; }
+
 .quiz-card h3 {
   font-size: 1.3rem;
   margin: 0 0 14px;
