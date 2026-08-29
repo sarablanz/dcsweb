@@ -1,72 +1,51 @@
 # DCS Consulting — sitio web
 
-Sitio estático (HTML/CSS/JS puro, sin frameworks ni build) con 11 páginas:
+Sitio estático (HTML/CSS/JS, sin frameworks ni build).
 
-- `index.html` — Home, con el embudo de 3 pasos (Radar gratis → Ebook $5 → Consultoría)
-- `radar.html` — Radar Cloud: landing con un formulario corto (nombre, empresa, email + consentimiento) que da acceso al autodiagnóstico. Sirve para contar solicitudes y capturar leads en vez de repartir el Excel en link directo.
-- `radar-gracias.html` — página de agradecimiento tras enviar el formulario de `radar.html` (vía redirect `_next` de Formspree): da acceso al autodiagnóstico interactivo y al Excel.
-- `radar-app.html` — el autodiagnóstico interactivo en sí: 14 preguntas paso a paso, resultado con semáforo de riesgo priorizado y guía de alertas nativas (M365/Google Workspace/AWS). Lógica en `js/radar-app.js`, datos embebidos en el propio script (mismos 14 riesgos y puntuaciones del kit Excel).
-- `consultoria.html` — Consultoría de riesgos con el método 3P+I (con formulario)
-- `formacion.html` — Rutas de formación en riesgos/data science (con formulario)
-- `aula-digital-segura.html` — Programa docente de violencia digital, coordinado por Auri (con formulario)
-- `ebook.html` — Venta del ebook "El auténtico valor del análisis de riesgos en la era digital" ($5), con portada animada
-- `sobre-nosotros.html` — Equipo: Saray (fundadora), Auri (Aula Digital Segura), Orlando (Product Manager)
-- `contacto.html` — Formulario de contacto general
-- `privacidad.html` — Política de privacidad (plantilla base, revisar con un profesional legal antes de darla por definitiva)
+## Páginas
 
-## Publicado en
+- `index.html` — Home
+- `radar.html` — Radar Cloud (landing + formulario de acceso)
+- `radar-gracias.html` — post-envío del formulario del Radar
+- `radar-app.html` — autodiagnóstico interactivo (14 preguntas)
+- `consultoria.html` — Consultoría, método 3P+I
+- `ebook.html` — Venta del ebook ($5)
+- `sobre-nosotros.html` — Equipo
+- `contacto.html` — Contacto
+- `privacidad.html` — Política de privacidad
+- `formacion.html`, `aula-digital-segura.html` — construidas, sin enlace en el menú por ahora
 
-**GitHub Pages**, repo [sarablanz/dcsweb](https://github.com/sarablanz/dcsweb), rama `main`.
+## Despliegue
 
-Cada vez que quieras actualizar el sitio en vivo:
+GitHub Pages, repo [sarablanz/dcsweb](https://github.com/sarablanz/dcsweb), rama `main`.
+
 ```bash
 cd paginaweb
 git add -A
 git commit -m "describe el cambio"
 git push
 ```
-GitHub Pages se actualiza solo, unos minutos después del push. No hace falta tocar el número de versión de caché para GitHub Pages (a diferencia de Hostinger), pero es buena práctica subirlo igual si cambias `css/style.css` o `js/*.js`: busca y reemplaza `20260729` por la fecha del día en las 8 páginas `.html`.
 
-**Si aún no activaste GitHub Pages**: entra a `https://github.com/sarablanz/dcsweb/settings/pages` → en "Build and deployment" → Source: **Deploy from a branch** → Branch: **main**, carpeta **/ (root)** → Save. El sitio queda en `https://sarablanz.github.io/dcsweb/`.
+Al cambiar `css/style.css` o `js/*.js`, sube el número de versión de caché (`?v=YYYYMMDD`) en las páginas `.html`.
 
-## Pendientes antes de compartir el link
+## Dominio
 
-- [ ] **Checkout del ebook**: en `ebook.html`, reemplaza el `href="#"` de "Comprar ebook — $5" por tu producto en Gumroad, Hotmart o Payhip.
-- [ ] **Formularios**: crea una cuenta gratuita en [Formspree](https://formspree.io), crea un formulario y reemplaza `YOUR_FORM_ID` en:
-      `consultoria.html`, `formacion.html`, `aula-digital-segura.html`, `contacto.html`.
-      El plan gratuito de Formspree permite 50 envíos al mes.
+`dcsconsulting.es` vía DonDominio (DNS: 4 registros A a las IPs de GitHub Pages + CNAME `www`; MX intactos para el correo). `CNAME` en la raíz del repo. HTTPS activo.
 
-## Formspree (cuenta ya creada)
+## Formspree
 
-Cuenta: `dcsconsulting004@gmail.com`. Panel de formularios y envíos: [formspree.io/forms](https://formspree.io/forms) (recomendable guardarlo en marcadores).
+Cuenta: `dcsconsulting004@gmail.com` · Panel: [formspree.io/forms](https://formspree.io/forms).
 
-- `radar.html` ya usa el formulario real: `https://formspree.io/f/xlgqaark`. El envío se hace por JavaScript (`initRadarFormRedirect` en `js/main.js`) en vez del `_next` de Formspree, porque la redirección automática es una función de pago — así, tras enviar, el propio navegador te lleva a `radar-gracias.html`.
-- Ese formulario ya trae un `_autoresponse`: en cuanto alguien lo envía, le llega un correo automático con el link al Excel y al autodiagnóstico interactivo. No hace falta revisar manualmente ni reenviar nada.
-- El plan gratis (50 envíos/mes) no cobra automáticamente si te pasas — simplemente deja de aceptar envíos hasta el mes siguiente, a menos que tú decidas subir de plan.
-- Para exportar tus leads a Excel/CSV, revisa las opciones del panel de cada formulario en Formspree.
+- `radar.html`: formulario real (`f/xlgqaark`), envío por `fetch` + redirect manual a `radar-gracias.html` (el `_next` de Formspree es de pago), con `_autoresponse` que manda el Excel por correo.
+- `consultoria.html`, `formacion.html`, `aula-digital-segura.html`, `contacto.html`: pendiente reemplazar `YOUR_FORM_ID`. Plan gratis: 50 envíos/mes, sin cobro automático al superarlo.
 
-## Dominio propio (dcsconsulting.es)
+## Pendiente
 
-El dominio se compró en DonDominio y usa sus servidores DNS (`ns1.dondominio.com` / `ns2.dondominio.com`), con un servicio de Mail asignado. Para que `dcsconsulting.es` muestre este sitio (en vez de `sarablanz.github.io/dcsweb`):
+- [ ] Checkout del ebook (`href="#"` en `ebook.html`)
+- [ ] Formularios restantes (arriba)
+- [ ] Revisión legal de `privacidad.html`
+- [ ] Unificar "DCS" vs "DSC" entre el sitio y el ebook
 
-1. **En el panel de DonDominio** (Dominio → DNS / Zona DNS del dominio):
-   - Desactiva la **"Parking page"** (si no, sobreescribe cualquier registro que agregues).
-   - Agrega 4 registros **A** en la raíz (`@`) apuntando a las IPs de GitHub Pages:
-     `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
-   - Agrega un registro **CNAME** para `www` → `sarablanz.github.io.`
-   - **No toques los registros MX** — esos son los que hacen funcionar el correo del dominio (el servicio Mail que ya tienes asignado).
-2. **En GitHub**: el archivo `CNAME` en la raíz del repo (ya incluido, contiene `dcsconsulting.es`) le dice a GitHub Pages qué dominio servir. Ve a `https://github.com/sarablanz/dcsweb/settings/pages` y confirma que en "Custom domain" aparece `dcsconsulting.es` con el check verde (puede tardar hasta 24h en verificar DNS) y activa **Enforce HTTPS** cuando esté disponible.
-3. Una vez propagado, actualiza los enlaces de Instagram/TikTok y cualquier material de marketing para usar `dcsconsulting.es` en vez del link de GitHub Pages.
+## Redes
 
-## Nota sobre el nombre de marca
-
-Tu logo, Instagram y TikTok usan **DCS Consulting**, pero el ebook (portada y texto interno) dice **DSC Consulting**. Dejé el sitio con "DCS" para que coincida con tu marca visual y tus redes — si prefieres unificarlo al revés, dímelo, o corrige el ebook antes de venderlo para que no haya inconsistencia de cara al cliente.
-
-## Si más adelante compras hosting propio (Hostinger, etc.)
-
-El archivo **`.htaccess`** en la raíz ya está listo para eso — evita que Hostinger sirva versiones viejas de tu CSS/JS durante 30 días después de cada actualización. Solo sube toda la carpeta por FTP/Administrador de Archivos, incluyendo `.htaccess` (empieza con punto, puede estar oculto).
-
-## Redes sociales
-
-Instagram: [@dcs_consulting](https://www.instagram.com/dcs_consulting/)
-TikTok: [@dcs_consulting](https://www.tiktok.com/@dcs_consulting)
+Instagram / TikTok: [@dcs_consulting](https://www.instagram.com/dcs_consulting/)
