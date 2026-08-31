@@ -1,51 +1,29 @@
-# DCS Consulting — sitio web
+# DCS Consulting
 
-Sitio estático (HTML/CSS/JS, sin frameworks ni build).
+Sitio web de DCS Consulting: consultoría y divulgación sobre seguridad y transformación
+digital para pequeñas empresas y autónomos.
 
-## Páginas
+Más allá de servir como escaparate del proyecto, este sitio es un espacio propio donde
+publico y voy dejando registro de mis análisis. Lo mantengo y lo construyo yo, como
+práctica continua de desarrollo web —un trabajo que disfruto por mi formación en
+informática y los cursos que he ido haciendo— y como aporte, desde España, a una
+visión más amplia: contribuir con conocimiento a la reconstrucción de Venezuela.
 
-- `index.html` — Home
-- `radar.html` — Radar Cloud (landing + formulario de acceso)
-- `radar-gracias.html` — post-envío del formulario del Radar
-- `radar-app.html` — autodiagnóstico interactivo (14 preguntas)
-- `consultoria.html` — Consultoría, método 3P+I
-- `ebook.html` — Venta del ebook ($5)
-- `sobre-nosotros.html` — Equipo
-- `contacto.html` — Contacto
-- `privacidad.html` — Política de privacidad
-- `formacion.html`, `aula-digital-segura.html` — construidas, sin enlace en el menú por ahora
+## Contenido
 
-## Despliegue
+- **Home** — presentación del proyecto y los servicios.
+- **Radar Cloud** — autodiagnóstico interactivo de madurez digital y de seguridad.
+- **Consultoría** — método de trabajo 3P+I.
+- **Ebook** — guía práctica descargable.
+- **Blog** — artículos y análisis.
+- **Sobre nosotros** — el equipo.
+- **Contacto** y **Política de privacidad**.
 
-GitHub Pages, repo [sarablanz/dcsweb](https://github.com/sarablanz/dcsweb), rama `main`.
+## Tecnología
 
-```bash
-cd paginaweb
-git add -A
-git commit -m "describe el cambio"
-git push
-```
+Sitio estático hecho a mano con HTML, CSS y JavaScript, sin frameworks ni proceso de
+build. Alojado en GitHub Pages bajo el dominio `dcsconsulting.es`, con HTTPS.
 
-Al cambiar `css/style.css` o `js/*.js`, sube el número de versión de caché (`?v=YYYYMMDD`) en las páginas `.html`.
+## Licencia
 
-## Dominio
-
-`dcsconsulting.es` vía DonDominio (DNS: 4 registros A a las IPs de GitHub Pages + CNAME `www`; MX intactos para el correo). `CNAME` en la raíz del repo. HTTPS activo.
-
-## Formspree
-
-Cuenta: `dcsconsulting004@gmail.com` · Panel: [formspree.io/forms](https://formspree.io/forms).
-
-- `radar.html`: formulario real (`f/xlgqaark`), envío por `fetch` + redirect manual a `radar-gracias.html` (el `_next` de Formspree es de pago), con `_autoresponse` que manda el Excel por correo.
-- `consultoria.html`, `formacion.html`, `aula-digital-segura.html`, `contacto.html`: pendiente reemplazar `YOUR_FORM_ID`. Plan gratis: 50 envíos/mes, sin cobro automático al superarlo.
-
-## Pendiente
-
-- [ ] Checkout del ebook (`href="#"` en `ebook.html`)
-- [ ] Formularios restantes (arriba)
-- [ ] Revisión legal de `privacidad.html`
-- [ ] Unificar "DCS" vs "DSC" entre el sitio y el ebook
-
-## Redes
-
-Instagram / TikTok: [@dcs_consulting](https://www.instagram.com/dcs_consulting/)
+Todos los derechos reservados. El código y los contenidos son propiedad de DCS Consulting.

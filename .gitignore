@@ -6,6 +6,9 @@ fotos/
 Thumbs.db
 .claude/
 
+# Notas internas de operación (no se publican)
+NOTAS.md
+
 # Documentos de referencia (no son parte del sitio)
 *.pdf
 
