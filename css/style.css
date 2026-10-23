@@ -688,40 +688,6 @@ form textarea { resize: vertical; min-height: 120px; }
   transform: translateY(-2px);
 }
 
-/* ---------- RRSS strip ---------- */
-
-.rrss-strip {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  overflow-y: visible;
-  padding: 8px 4px 16px;
-  scroll-snap-type: x proximity;
-  scrollbar-width: none;
-}
-
-.rrss-strip::-webkit-scrollbar { display: none; }
-
-.rrss-strip img {
-  flex: 0 0 auto;
-  width: 200px;
-  aspect-ratio: 9 / 16;
-  object-fit: cover;
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
-  scroll-snap-align: start;
-  transition: transform 0.3s var(--ease-out), border-color 0.3s var(--ease-out);
-}
-
-.rrss-strip img:hover {
-  transform: translateY(-4px);
-  border-color: var(--purple);
-}
-
-@media (max-width: 600px) {
-  .rrss-strip img { width: 150px; }
-}
-
 /* ---------- Social row ---------- */
 
 .social-row {
