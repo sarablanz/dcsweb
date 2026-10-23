@@ -1178,3 +1178,40 @@ form textarea { resize: vertical; min-height: 120px; }
   .quiz-card { padding: 32px 22px; }
   .quiz-stat { flex: 1 1 40%; }
 }
+
+
+/* ---------- FAQ ---------- */
+
+.faq { display: grid; gap: 12px; }
+
+.faq-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0 24px;
+}
+
+.faq-item summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 18px 28px 18px 0;
+  font-weight: 600;
+  position: relative;
+}
+
+.faq-item summary::-webkit-details-marker { display: none; }
+
+.faq-item summary::after {
+  content: "+";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--purple);
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.faq-item[open] summary::after { content: "–"; }
+
+.faq-item p { color: var(--text-muted); margin: 0 0 18px; }
