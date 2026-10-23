@@ -157,7 +157,6 @@
         '<div class="quiz-alerts-table" id="quiz-alerts-table">' + alertsHtml + "</div>" +
         '<div class="hero-actions" style="margin-top:36px;">' +
         '<a href="contacto.html" class="btn btn-primary">Hablar con DCS Consulting</a>' +
-        '<a href="ebook.html" class="btn btn-outline">Ver el ebook · $5</a>' +
         "</div>" +
         '<p style="margin-top:20px;"><a href="assets/downloads/Radar-Cloud-DCS-Nivel1.xlsx" style="color:var(--blue); font-weight:600;">Descargar el kit completo en Excel →</a></p>' +
         '<p style="margin-top:12px;"><button type="button" id="quiz-restart-btn" style="background:none; border:none; color:var(--text-muted); text-decoration:underline; cursor:pointer; font-size:0.85rem;">Repetir el autodiagnóstico</button></p>' +
