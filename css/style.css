@@ -1215,3 +1215,6 @@ form textarea { resize: vertical; min-height: 120px; }
 .faq-item[open] summary::after { content: "–"; }
 
 .faq-item p { color: var(--text-muted); margin: 0 0 18px; }
+
+/* Anclas de la página única */
+section[id] { scroll-margin-top: 72px; }
