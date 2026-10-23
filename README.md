@@ -15,7 +15,6 @@ visión más amplia: contribuir con conocimiento a la reconstrucción de Venezue
 - **Radar Cloud** — autodiagnóstico interactivo de madurez digital y de seguridad.
 - **Consultoría** — método de trabajo 3P+I.
 - **Blog** — artículos y análisis.
-- **Sobre nosotros** — el equipo.
 - **Contacto** y **Política de privacidad**.
 
 ## Tecnología
