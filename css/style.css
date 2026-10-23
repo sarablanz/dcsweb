@@ -383,6 +383,7 @@ section { padding: 72px 0; }
 }
 
 .grid-2 { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+.grid-3 { grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); }
 
 .card {
   position: relative;
